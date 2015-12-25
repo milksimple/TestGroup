@@ -10,8 +10,8 @@
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 @interface TestTableViewController ()
 
-@property (nonatomic, strong)NSMutableArray *dataArray;
-@property (nonatomic, strong)NSMutableArray *isSelected;
+@property (nonatomic, strong)NSMutableArray *dataArray;//数据
+@property (nonatomic, strong)NSMutableArray<NSNumber *> *isExpland;//这里用到泛型，防止存入非数字类型
 
 @end
 
@@ -26,14 +26,14 @@
     if (!self.dataArray) {
         self.dataArray = [NSMutableArray array];
     }
-    if (!self.isSelected) {
-       self.isSelected = [NSMutableArray array];
+    if (!self.isExpland) {
+       self.isExpland = [NSMutableArray array];
     }
     
     self.dataArray = [NSArray arrayWithObjects:@[@"a",@"b",@"c",@"d"],@[@"d",@"e",@"f"],@[@"h",@"i",@"j",@"m",@"n"],nil].mutableCopy;
-    //用0代表收起，1代表展开，默认都是收起的
+    //用0代表收起，非0代表展开，默认都是收起的
     for (int i = 0; i < self.dataArray.count; i++) {
-        [self.isSelected addObject:@0];
+        [self.isExpland addObject:@0];
     }
     [self.tableView reloadData];
 }
@@ -48,7 +48,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     NSArray *array = self.dataArray[section];
-    if ([self.isSelected[section] boolValue]) {
+    if ([self.isExpland[section] boolValue]) {
         return array.count;
     }
     else {
@@ -67,12 +67,13 @@
     return cell;
 }
 
+//自定义SectionHeader
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     UIButton *headerSection = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 44)];
     headerSection.backgroundColor = [UIColor clearColor];
     
-    NSString *imgName = [self.isSelected[section] boolValue]?@"icon_drop_up":@"icon_drop_down";
+    NSString *imgName = [self.isExpland[section] boolValue]?@"icon_drop_up":@"icon_drop_down";
     UIImage *img = [UIImage imageNamed:imgName];
     UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
     imgView.frame = CGRectMake(kScreenWidth-img.size.width-20, (44-img.size.height)/2.0, img.size.width, img.size.height);
@@ -87,7 +88,7 @@
     
     //标题
     [headerSection setTitle:[NSString stringWithFormat:@"第%@组",@(section)] forState:UIControlStateNormal];
-    headerSection.font = [UIFont systemFontOfSize:16];
+    headerSection.titleLabel.font = [UIFont systemFontOfSize:16];
     [headerSection setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     [headerSection addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -103,10 +104,16 @@
 }
 
 - (void)buttonAction:(UIButton *)button {
+    
     NSInteger section = button.tag - 666;
-    self.isSelected[section] = [self.isSelected[section] isEqual:@0]?@1:@0;
+    
+    //纪录展开的状态
+    self.isExpland[section] = [self.isExpland[section] isEqual:@0]?@1:@0;
+    
+    //刷新点击的section
     NSIndexSet *set = [NSIndexSet indexSetWithIndex:section];
     [self.tableView reloadSections:set withRowAnimation:UITableViewRowAnimationFade];
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
