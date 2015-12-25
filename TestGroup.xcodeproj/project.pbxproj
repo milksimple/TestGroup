@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		6687A2471C2CEB6F00D9C878 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6687A2461C2CEB6F00D9C878 /* main.m */; };
 		6687A24A1C2CEB6F00D9C878 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6687A2491C2CEB6F00D9C878 /* AppDelegate.m */; };
-		6687A24D1C2CEB6F00D9C878 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6687A24C1C2CEB6F00D9C878 /* ViewController.m */; };
 		6687A2501C2CEB6F00D9C878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6687A24E1C2CEB6F00D9C878 /* Main.storyboard */; };
 		6687A2521C2CEB6F00D9C878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6687A2511C2CEB6F00D9C878 /* Assets.xcassets */; };
 		6687A2551C2CEB6F00D9C878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6687A2531C2CEB6F00D9C878 /* LaunchScreen.storyboard */; };
+		6687A25E1C2CEBEA00D9C878 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6687A25D1C2CEBEA00D9C878 /* TestTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +20,12 @@
 		6687A2461C2CEB6F00D9C878 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6687A2481C2CEB6F00D9C878 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6687A2491C2CEB6F00D9C878 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6687A24B1C2CEB6F00D9C878 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6687A24C1C2CEB6F00D9C878 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6687A24F1C2CEB6F00D9C878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6687A2511C2CEB6F00D9C878 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6687A2541C2CEB6F00D9C878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6687A2561C2CEB6F00D9C878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6687A25C1C2CEBEA00D9C878 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		6687A25D1C2CEBEA00D9C878 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 			children = (
 				6687A2481C2CEB6F00D9C878 /* AppDelegate.h */,
 				6687A2491C2CEB6F00D9C878 /* AppDelegate.m */,
-				6687A24B1C2CEB6F00D9C878 /* ViewController.h */,
-				6687A24C1C2CEB6F00D9C878 /* ViewController.m */,
+				6687A25C1C2CEBEA00D9C878 /* TestTableViewController.h */,
+				6687A25D1C2CEBEA00D9C878 /* TestTableViewController.m */,
 				6687A24E1C2CEB6F00D9C878 /* Main.storyboard */,
 				6687A2511C2CEB6F00D9C878 /* Assets.xcassets */,
 				6687A2531C2CEB6F00D9C878 /* LaunchScreen.storyboard */,
@@ -149,9 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6687A24D1C2CEB6F00D9C878 /* ViewController.m in Sources */,
 				6687A24A1C2CEB6F00D9C878 /* AppDelegate.m in Sources */,
 				6687A2471C2CEB6F00D9C878 /* main.m in Sources */,
+				6687A25E1C2CEBEA00D9C878 /* TestTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

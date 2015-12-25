@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TestTableViewController.h
 //  TestGroup
 //
 //  Created by 丁丁 on 15/12/25.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TestTableViewController : UITableViewController
 
 @end
-
